@@ -1,0 +1,31 @@
+package arraydec10;
+import java.util.*;
+public class ArrayRotation {
+	public static void main(String[] args) {
+		int[] array = {1, 2, 3, 4, 5, 6, 6};
+		int []arr=new int[array.length];
+        int n = array.length;
+        int d=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the digits to rotate");
+        d=sc.nextInt();
+        if(d>array.length) {
+        	System.out.println("Array does not contain "+d+" elements");
+        }else {
+        	System.out.println("The array after rotation of "+d+" elements");
+        }
+        for(int ii=0;ii<d;++ii) {
+        	arr[ii]=array[ii];
+        }
+        for(int ii=d;ii<array.length;++ii) {
+        	array[ii-d]=array[ii];
+        }
+        for(int i=0;i<d;i++) {
+        	array[array.length-d+i]=arr[i];
+        }
+        for(int i=0;i<n;i++) {
+        	System.out.print(array[i]+" ");
+        }
+        sc.close();
+    }
+}
